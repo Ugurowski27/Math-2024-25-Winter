@@ -1,323 +1,210 @@
-# Solutions18
+### **5. Inverse of a Matrix from the Formula**
 
-## **18. Functions**
+#### 1. Find the inverse matrix for:  
+$$  
+A = \begin{pmatrix} 2 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 2 & 0 \end{pmatrix}  
+$$  
 
-1. **Draw the functions and find their values at** $x = 2$ using GeoGebra:
+**Step-by-Step Solution:**
 
-   Functions:
+1. Compute the determinant of \(A\):  
+   $$
+   \det(A) = 2 \left| \begin{matrix} 1 & 0 \\ 2 & 0 \end{matrix} \right| - 0 \left| \begin{matrix} 0 & 0 \\ 1 & 0 \end{matrix} \right| + 1 \left| \begin{matrix} 0 & 1 \\ 1 & 2 \end{matrix} \right|
+   $$  
+   $$
+   \det(A) = 2(1 \times 0 - 0 \times 2) + 1(0 \times 2 - 1 \times 1) = 0 - 1 = -1
+   $$  
 
-   - $f(x) = x^2$
-
-   - $g(x) = \sqrt{x}$
-
-   - $h(x) = \frac{1}{x}$
-
-   - $j(x) = \sin(x)$
-
-   Value at $x = 2$:
-
-   - $f(2) = 2^2 = 4$
-
-   - $g(2) = \sqrt{2} \approx 1.41$
-
-   - $h(2) = \frac{1}{2} = 0.5$
-
-   - $j(2) = \sin(2) \approx 0.909$
-
-2. **Composite Functions**  
-
-   Let $f(x) = 3x - 1$ and $g(x) = \sqrt{x}$.  
-
-   Find:  
-
-   - $f(g(x)) = 3\sqrt{x} - 1$
-
-   - $g(f(x)) = \sqrt{3x - 1}$
-
-   - $f(f(x)) = 3(3x - 1) - 1 = 9x - 4$
-
-   - $g(g(x)) = \sqrt{\sqrt{x}} = x^{1/4}$
-
-3. **Check $f(g(x))$ and $g(f(x))$ for $f(x) = e^x$ and $g(x) = \ln(x)$**:  
-
-   - $f(g(x)) = e^{\ln(x)} = x$  
-
-   - $g(f(x)) = \ln(e^x) = x$
-
-   **Observation**: These are **inverse functions** since they return $x$.
-
-4. **Inverse of $f = \{(1,7), (2,9), (3,11)\}$**:  
-
+2. Find the matrix of cofactors, adjugate, and inverse matrix using $\frac{1}{\det(A)}$.  
    The inverse is:  
-
-   $f^{-1} = \{(7,1), (9,2), (11,3)\}$.
-
-5. **Find the inverse of $f(x) = x - 1$**:  
-
-   To find $f^{-1}(x)$, solve:  
-
-   $y = x - 1$  
-
-   $x = y - 1$ → $y = x + 1$  
-
-   So, $f^{-1}(x) = x + 1$.
+   $$
+   A^{-1} = \frac{1}{-1} \begin{pmatrix} 0 & 2 & -1 \\ 0 & 2 & 1 \\ 1 & -1 & 0 \end{pmatrix} = \begin{pmatrix} 0 & -2 & 1 \\ 0 & -2 & -1 \\ -1 & 1 & 0 \end{pmatrix}
+   $$  
 
 ---
 
-## **19. Limits of Sequences**
+### **6. Inverse of a Matrix using the Gauss Method**
 
-1.  
+1. Find the inverse matrices using the Gauss method for:  
 
+$$
+A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}, \quad B = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 1 \\ 2 & 3 & 2 \end{pmatrix}, \quad C = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0 \end{pmatrix}
+$$
+
+Use elementary row operations to transform each matrix into the identity matrix.
+
+---
+
+### **7. Linear Equations Old School**
+
+Solve the following system of equations without using matrices:
+
+$$
+\begin{cases}
+3x - 2y = 5 \\
+2x + 3y = 7
+\end{cases}
+$$
+
+#### Step-by-Step Solution:
+
+1. Start with the given system:  
    $$
-
-   \lim_{n \to \infty} \frac{n^2 + 3n}{2n^2 - 2n}  
-
+   3x - 2y = 5 \quad (1)
    $$  
-
-   Divide numerator and denominator by $n^2$:  
-
+   $$
+   2x + 3y = 7 \quad (2)
    $$
 
-   \lim_{n \to \infty} \frac{1 + \frac{3}{n}}{2 - \frac{2}{n}} = \frac{1 + 0}{2 - 0} = \frac{1}{2}
-
+2. Multiply equation (1) by 3 and equation (2) by 2 to align the coefficients of \(y\):  
+   $$
+   3(3x - 2y) = 3 \times 5 \quad \Rightarrow \quad 9x - 6y = 15
+   $$
+   $$
+   2(2x + 3y) = 2 \times 7 \quad \Rightarrow \quad 4x + 6y = 14
    $$
 
-2.  
-
+3. Add the two new equations to eliminate \(y\):  
+   $$
+   (9x - 6y) + (4x + 6y) = 15 + 14
+   $$
+   $$
+   13x = 29 \quad \Rightarrow \quad x = \frac{29}{13}
    $$
 
-   \lim_{n \to \infty} \frac{(2n + 3)^3}{n^3 - 1}  
-
-   $$  
-
-   Expand the numerator:  
-
+4. Substitute $x = \frac{29}{13}$ into one of the original equations to find \(y\). Using equation (1):  
+   $$
+   3x - 2y = 5 \quad \Rightarrow \quad 3\left(\frac{29}{13}\right) - 2y = 5
+   $$
+   $$
+   \frac{87}{13} - 2y = 5
+   $$
+   $$
+   -2y = 5 - \frac{87}{13} = \frac{65}{13} - \frac{87}{13} = -\frac{22}{13}
+   $$
+   $$
+   y = \frac{-\frac{22}{13}}{-2} = \frac{22}{26} = \frac{11}{13}
    $$
 
-   (2n + 3)^3 = 8n^3 + 36n^2 + 54n + 27
-
-   $$  
-
-   Now,  
-
+5. **Solution**:  
+   $$
+   x = \frac{29}{13}, \quad y = \frac{11}{13}
    $$
 
-   \lim_{n \to \infty} \frac{8n^3 + 36n^2 + 54n + 27}{n^3 - 1} = \frac{8 + 0 + 0 + 0}{1 - 0} = 8
-
+Thus, the solution to the system is:  
    $$
-
-3. **Prove using the squeeze theorem**:  
-
-   $$
-
-   \lim_{n \to \infty} \frac{\sin(n)}{n}  
-
-   $$  
-
-   Since $-1 \leq \sin(n) \leq 1$,  
-
-   $$
-
-   -\frac{1}{n} \leq \frac{\sin(n)}{n} \leq \frac{1}{n}
-
-   $$  
-
-   As $n \to \infty$, both bounds tend to 0, so by the squeeze theorem,  
-
-   $$
-
-   \lim_{n \to \infty} \frac{\sin(n)}{n} = 0
-
-   $$
-
-4.  
-
-   $$
-
-   a_n = \left(1 + \frac{1}{n}\right)^n  
-
-   $$  
-
-   This limit is well-known as $e$.  
-
-   $$
-
-   \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e
-
+   \left( \frac{29}{13}, \frac{11}{13} \right)
    $$
 
 ---
 
-## **20. Limits of Real Functions**
+### **8. Linear Equations by Cramer's Rule**
 
-1.  
+Solve the system of equations:
 
+$$
+\begin{cases}
+2x_1 - 3x_2 = 7 \\
+3x_1 + 5x_2 = 2
+\end{cases}
+$$
+
+1. The coefficient matrix is:  
    $$
-
-   \lim_{x \to \infty} \frac{x^3 + 2x^2}{x^4 - 3x^3}  
-
+   A = \begin{pmatrix} 2 & -3 \\ 3 & 5 \end{pmatrix}
    $$  
 
-   Divide numerator and denominator by $x^4$:  
-
+2. Compute the determinant of \(A\):  
    $$
-
-   \lim_{x \to \infty} \frac{\frac{1}{x} + \frac{2}{x^2}}{1 - \frac{3}{x}} = 0
-
-   $$
-
-2.  
-
-   $$
-
-   \lim_{x \to 0} \frac{\sin(3x)}{2x + 1}  
-
+   \det(A) = 2 \times 5 - (-3) \times 3 = 10 + 9 = 19
    $$  
 
-   Substitute $x = 0$:  
-
+3. Find the determinants of matrices \(A_1\) and \(A_2\):  
    $$
-
-   \frac{\sin(0)}{2(0) + 1} = 0
-
+   A_1 = \begin{pmatrix} 7 & -3 \\ 2 & 5 \end{pmatrix}, \quad \det(A_1) = 7 \times 5 - (-3) \times 2 = 35 + 6 = 41
+   $$  
    $$
+   A_2 = \begin{pmatrix} 2 & 7 \\ 3 & 2 \end{pmatrix}, \quad \det(A_2) = 2 \times 2 - 7 \times 3 = 4 - 21 = -17
+   $$  
 
-3. **Asymptotes of** $f(x) = \frac{x^2 - 1}{x^2 + 1}$:  
-
-   - Vertical asymptotes: None (denominator is never zero).  
-
-   - Horizontal asymptote:  
-
-     $$
-
-     \lim_{x \to \infty} \frac{x^2 - 1}{x^2 + 1} = 1 
+4. Use Cramer’s Rule:  
+   $$
+   x_1 = \frac{\det(A_1)}{\det(A)} = \frac{41}{19}, \quad x_2 = \frac{\det(A_2)}{\det(A)} = \frac{-17}{19}
+   $$  
 
 ---
 
-## **22. Integrals**
+### **9. Linear Equations by Gauss Elimination**
 
-1.  
+Solve the system:
 
+$$
+\begin{cases}
+x + y + z - t = 2 \\
+x - z + 2t = 6 \\
+2x - 3y + t = 4 \\
+3x + y + 3z - 4t = -2
+\end{cases}
+$$
+
+1. Set up the augmented matrix:  
+   $$
+   \begin{pmatrix}
+   1 & 1 & 1 & -1 & 2 \\
+   1 & 0 & -1 & 2 & 6 \\
+   2 & -3 & 0 & 1 & 4 \\
+   3 & 1 & 3 & -4 & -2
+   \end{pmatrix}
    $$
 
-   \int x^2 \, dx = \frac{x^3}{3} + C
+2. Use row operations to reduce it to row-echelon form and solve for the variables.
+
+---
+
+### **10. Linear Equations by Matrix Inversion**
+
+
+Solve the system of equations using the inverse matrix method:
+
+$$
+\begin{cases}
+x + 2y + 3z = 41 \\
+4x + 5y + 6z = 93 \\
+7x + 8y + 9z = 145
+\end{cases}
+$$
+
+#### Step-by-Step Solution:
+
+1. The coefficient matrix \( A \), the variable matrix \( X \), and the constant matrix \( B \) are:  
 
    $$
-
-2.  
-
+   A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}, \quad X = \begin{pmatrix} x \\ y \\ z \end{pmatrix}, \quad B = \begin{pmatrix} 41 \\ 93 \\ 145 \end{pmatrix}
    $$
 
-   \int_0^1 (3x^2 + 2x) \, dx  
-
-   $$  
-
-   First, integrate term-by-term:  
+2. Compute the determinant of \( A \):  
 
    $$
-
-   \int_0^1 3x^2 \, dx = \left[ x^3 \right]_0^1 = 1  
-
-   $$  
-
+   \det(A) = 1 \left| \begin{matrix} 5 & 6 \\ 8 & 9 \end{matrix} \right| - 2 \left| \begin{matrix} 4 & 6 \\ 7 & 9 \end{matrix} \right| + 3 \left| \begin{matrix} 4 & 5 \\ 7 & 8 \end{matrix} \right|
    $$
 
-   \int_0^1 2x \, dx = \left[ x^2 \right]_0^1 = 1  
-
-   $$  
-
-   So,  
+   Compute each minor determinant:  
 
    $$
-
-   \int_0^1 (3x^2 + 2x) \, dx = 1 + 1 = 2
-
+   \det \begin{pmatrix} 5 & 6 \\ 8 & 9 \end{pmatrix} = 5 \times 9 - 6 \times 8 = 45 - 48 = -3
+   $$
+   $$
+   \det \begin{pmatrix} 4 & 6 \\ 7 & 9 \end{pmatrix} = 4 \times 9 - 6 \times 7 = 36 - 42 = -6
+   $$
+   $$
+   \det \begin{pmatrix} 4 & 5 \\ 7 & 8 \end{pmatrix} = 4 \times 8 - 5 \times 7 = 32 - 35 = -3
    $$
 
-3.  
+   Substituting into the determinant formula:  
 
    $$
-
-   \int \frac{1}{x} \, dx = \ln |x| + C
-
+   \det(A) = 1(-3) - 2(-6) + 3(-3) = -3 + 12 - 9 = 0
    $$
 
-4.  
-
-   $$
-
-   \int e^{2x} \, dx  
-
-   $$  
-
-   Let \( u = 2x \), so \( du = 2dx \).  
-
-   $$
-
-   \int e^{2x} \, dx = \frac{1}{2} e^{2x} + C
-
-   $$
-
-5. **Find the area under the curve** \( y = x^2 \) from \( x = 1 \) to \( x = 3 \):  
-
-   $$
-
-   \int_1^3 x^2 \, dx = \left[ \frac{x^3}{3} \right]_1^3  
-
-   $$  
-
-   $$
-
-   = \frac{3^3}{3} - \frac{1^3}{3} = \frac{27}{3} - \frac{1}{3} = \frac{26}{3}
-
-   $$
-
-6. **Solve**:  
-
-   $$
-
-   \int_0^\pi \sin(x) \, dx  
-
-   $$  
-
-   The integral of \(\sin(x)\) is \(-\cos(x)\):  
-
-   $$
-
-   \left[ -\cos(x) \right]_0^\pi = -\cos(\pi) + \cos(0) = -(-1) + 1 = 2
-
-   $$
-
-7. **Evaluate**:  
-
-   $$
-
-   \int_0^1 x e^x \, dx  
-
-   $$  
-
-   Use **integration by parts**:  
-
-   Let \( u = x \), \( dv = e^x dx \).  
-
-   Then, \( du = dx \) and \( v = e^x \).  
-
-   $$
-
-   \int x e^x \, dx = x e^x - \int e^x \, dx = x e^x - e^x + C  
-
-   $$  
-
-   Now,  
-
-   $$
-
-   \int_0^1 x e^x \, dx = \left[ e^x(x - 1) \right]_0^1  
-
-   $$  
-
-   $$
-
-   = e(1 - 1) - (0 - 1) = 1
-
-   $$ 
+3. **Conclusion**: Since the determinant of \( A \) is zero, the matrix \( A \) is **singular**.  
+   Therefore, the system **does not have a unique solution**, and matrix inversion cannot be used to solve this system.
